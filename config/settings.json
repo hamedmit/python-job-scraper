@@ -1,0 +1,17 @@
+{
+    "search": {
+        "keywords": [
+            "AI Engineer",
+            "Python"
+        ],
+        "remote": true,
+        "sources": [
+
+            "wellfound"
+
+        ],
+        "max_results": 30,
+        "min_score": 20
+    }
+
+}

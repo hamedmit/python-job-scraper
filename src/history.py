@@ -1,36 +1,39 @@
 import csv
-from pathlib import Path
 from datetime import datetime
 
-REPORT_DIR = Path("output/reports")
-REPORT_DIR.mkdir(parents=True, exist_ok=True)
 
-REPORT_FILE = REPORT_DIR / "run_history.csv"
+def save_run(
+    status: str,
+    duration: float,
+    jobs: int,
+    sources: str,
+    paths
+):
 
+    report_file = paths["history"]
 
-def save_run(status: str,
-             duration: float,
-             telegram: bool,
-             jobs: int,
-             sources: str):
+    file_exists = (
+        report_file.exists()
+        and report_file.stat().st_size > 0
+    )
 
-    file_exists = REPORT_FILE.exists() and REPORT_FILE.stat().st_size > 0
-
-    with open(REPORT_FILE,
-              mode="a",
-              newline="",
-              encoding="utf-8") as file:
+    with open(
+        report_file,
+        "a",
+        newline="",
+        encoding="utf-8"
+    ) as file:
 
         writer = csv.writer(file)
 
         if not file_exists:
+
             writer.writerow([
                 "Time",
                 "Status",
                 "Duration(sec)",
                 "Jobs",
-                "Telegram",
-                "sources"
+                "Sources"
             ])
 
         writer.writerow([
@@ -38,6 +41,6 @@ def save_run(status: str,
             status,
             round(duration, 2),
             jobs,
-            "Yes" if telegram else "No",
             sources
         ])
+

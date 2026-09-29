@@ -1,7 +1,2 @@
-certifi==2026.6.17
-charset-normalizer==3.4.9
-idna==3.18
-python-dotenv==1.2.2
-PyYAML==6.0.3
-requests==2.34.2
-urllib3==2.7.0
+beautifulsoup4==4.15.0
+Requests==2.34.2

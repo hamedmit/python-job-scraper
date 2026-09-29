@@ -3,34 +3,33 @@ import requests
 
 from src.logger import logger
 from urllib.parse import quote_plus
-from src.config.config import config
 
 USER_AGENT = {
     "User-Agent": "Mozilla/5.0"
 }
 
 
-def build_urls():
+def build_urls(settings):
 
     urls = []
 
-    for keyword in config.keywords:
+    for keyword in settings.keywords:
 
         query = quote_plus(keyword)
 
         urls.append(
-            f"https://remotive.com/api/remote-jobs?search={query}&limit={config.max_results}"
+            f"https://remotive.com/api/remote-jobs?search={query}&limit={settings.max_results}"
         )
 
     return urls
 
 
-def scrape():
+def scrape(settings):
 
     logger.info("Searching Remotive...")
 
     jobs = []
-    urls = build_urls()
+    urls = build_urls(settings)
     for url in urls:
 
         try:

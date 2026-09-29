@@ -1,0 +1,6 @@
+services:
+  jobscraper:
+    build:
+      context: .
+    volumes:
+      - ./output:/app/output
