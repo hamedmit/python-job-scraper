@@ -1,8 +1,12 @@
-# JobScraper-Open
+# python-job-scraper
 
 A lightweight Python tool for collecting and ranking remote job opportunities from multiple job sources.
 
 The project keeps the workflow simple: collect jobs, filter and rank them based on configurable keywords, remove duplicates, and export the results to CSV.
+
+<div dir="rtl">
+برای راهنمای فارسی فایل 'README_FA' را ببینید.
+</div>
 
 ## Why this project?
 
@@ -82,7 +86,7 @@ You can change these values according to your own job search needs.
 ## Project Structure
 
 ```text
-JobScraper-Open/
+python-job-scraper/
 ├── main.py
 ├── config/
 │   └── settings.json
@@ -162,7 +166,7 @@ CSV files can be opened directly in spreadsheet applications.
 
 ## Part of a Larger Project
 
-`JobScraper-Open` is the first version of a larger job-search project.
+`python-job-scraper` is the first version of a larger job-search project.
 
 The second version is a Telegram bot that allows users to manage their search settings directly through Telegram and receive job results in the same place. It also searches a wider range of job sources.
 
